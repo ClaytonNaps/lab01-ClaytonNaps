@@ -84,7 +84,7 @@ double indexOfMaxGrade( int rowSize, int colSize, double array[][ROSTER_SIZE]);
 
 // TODO: 3.1 - Implement the maxGrade function below
 double maxGrade(int size, double array[]) {
-    
+
 
     double max = array[0];
 
