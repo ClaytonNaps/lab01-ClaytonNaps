@@ -17,9 +17,9 @@
 #define FALSE 0
 #define TRUE 1
 
-#define TEST_TASK1 FALSE
-#define TEST_TASK2 FALSE
-#define TEST_TASK3 FALSE
+#define TEST_TASK1 TRUE
+#define TEST_TASK2 TRUE
+#define TEST_TASK3 TRUE
 
 #include <algorithm>
 #include <cassert>
@@ -45,7 +45,7 @@
 
 #include "expanded_templates.h"
 
- /** Common iostream objects */
+/** Common iostream objects */
 using std::cerr;
 using std::cin;
 using std::cout;
@@ -58,31 +58,64 @@ using std::setprecision;
 using std::setw;
 
 // TODO: 1.1 Declare a named constant ROSTER_SIZE initialized to the integer value 5.
-
+const int ROSTER_SIZE{5};
 
 // TODO: 1.3 Declare a named constant NUM_COURSES initialized to the integer value of 3.
-
+const int NUM_COURSES{3};
 
 // TODO: 1.2 Declare an array named testGrades whose size is ROSTER_SIZE that stores floating-point numbers (e.g., double)
-
+double testGrades[ROSTER_SIZE];
 
 // TODO: 1.4 Declare a two-dimensional array named gradeBook that has NUM_COURSES rows and ROSTER_SIZE columns that
 //  stores floating point numbers (e.g., double)
-
+double gradeBook[NUM_COURSES][ROSTER_SIZE];
 
 // TODO: 2.1 Declare a function named maxGrade that specifies two parameters. The first parameter is an integer that
 //  specifies the number of elements in the array to process and the second parameter is an array of doubles.
+double maxGrade( int size, double array[]);
+
+
 
 
 // TODO: 2.2 Declare function named indexOfMaxGrade that specifies three parameters. The first parameter is an integer
 //  that corresponds to the number of rows in the given table, the second parameter is an integer that corresponds to
 //  the number of columns in the table, and the third parameter is for a two-dimensional array of double values.
-
+double indexOfMaxGrade( int rowSize, int colSize, double array[][ROSTER_SIZE]);
 
 // TODO: 3.1 - Implement the maxGrade function below
+double maxGrade(int size, double array[]) {
+    
+
+    double max = array[0];
+
+    for (int i = 1; i < size; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+
+    return max;
+}
 
 
 // TODO: 3.2 Implement indexOfMaxGrade function below
+double indexOfMaxGrade(int rowSize, int colSize, double array[][ROSTER_SIZE]) {
+
+    double max = array[0][0];
+
+    for (int i = 0; i < rowSize; i++) {
+        for (int j = 0; j < colSize; j++) {
+            if (array[i][j] > max) {
+                max = array[i][j];
+
+            }
+        }
+    }
+
+    return max;
+}
+
+
 
 
 #endif // MSU_CSC232_H_
