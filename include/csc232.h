@@ -116,6 +116,4 @@ double indexOfMaxGrade(int rowSize, int colSize, double array[][ROSTER_SIZE]) {
 }
 
 
-
-
 #endif // MSU_CSC232_H_
