@@ -83,6 +83,13 @@ double maxGrade( int size, double array[]);
 double indexOfMaxGrade( int rowSize, int colSize, double array[][ROSTER_SIZE]);
 
 // TODO: 3.1 - Implement the maxGrade function below
+/**
+ * @brief Find the maximum grade from an array of grades.
+ *
+ * @param size The number of elements in the array.
+ * @param array An array of doubles representing grades.
+ * @return The maximum grade found in the array.
+ */
 double maxGrade(int size, double array[]) {
 
 
@@ -99,16 +106,21 @@ double maxGrade(int size, double array[]) {
 
 
 // TODO: 3.2 Implement indexOfMaxGrade function below
+/**
+ * @brief Find the maximum grade from a two-dimensional grade book.
+ *
+ * @param rowSize The number of rows in the grade book.
+ * @param colSize The number of columns in the grade book.
+ * @param array A two-dimensional array of double values representing grades.
+ * @return The maximum grade found in the grade book.
+ */
 double indexOfMaxGrade(int rowSize, int colSize, double array[][ROSTER_SIZE]) {
+    double max = maxGrade(colSize, array[0]);
 
-    double max = array[0][0];
-
-    for (int i = 0; i < rowSize; i++) {
-        for (int j = 0; j < colSize; j++) {
-            if (array[i][j] > max) {
-                max = array[i][j];
-
-            }
+    for (int i = 1; i < rowSize; i++) {
+        double rowMax = maxGrade(colSize, array[i]);
+        if (rowMax > max) {
+            max = rowMax;
         }
     }
 
